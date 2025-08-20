@@ -4,3 +4,4 @@ terraform/keys
 *.hcl
 *.0_x5
 *.info
+*.terraform
