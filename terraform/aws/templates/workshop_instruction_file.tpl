@@ -140,7 +140,7 @@ Now that you have completed setting up your Confluent Cloud account, cluster and
     2. Database port: ${RDS1_PORT}
     3. Database username: ${RDS1_USER}
     4. Database password: ${RDS1_PASSWORD}
-    5. Database name: <Your database name>
+    5. Database name: Your database name
 5. Click continue. This will take a few moments.<br>
 6. In the configuration page, modify the following to the values below:<br>
 	1. Output record value format: JSON_SR<br>
@@ -196,12 +196,12 @@ Here, we will be creating a database schema to use it in the sink connector we w
     2. Database port: ${RDS2_PORT}
     3. Database username: ${RDS2_USER}
     4. Database password: ${RDS2_PASSWORD}
-    5. Database name: <Your schema name>
+    5. Database name: -Your schema name-
 5. Under configuration, set Input Kafka record value format as **JSON_SR** and Insert mode as **UPSERT**.
 6. In advanced configuration, modify the following:<br>
 	1. Auto create table: true<br>
  	2. Auto add columns: true<br>
-  	3. Table name format: <schema_name>.<topic>
+  	3. Table name format: <schema_name>.-topicname-
    	4. PK mode: record_value
 	5. PK Fields: id
 7. Set Input Kafka key value format as JSON_SR

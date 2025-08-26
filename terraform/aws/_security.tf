@@ -25,7 +25,7 @@ resource "aws_network_acl" "webapp-nacl" {
   }
 
   tags = {
-    Name = "confluent-101-workshop-webapp-nacl-august-2025"
+    Name = "confluent-101-workshop-webapp-nacl-august-2025-${random_id.suffix.dec}"
   }
 }
 
@@ -51,7 +51,7 @@ resource "aws_network_acl" "db-nacl" {
   }
 
   tags = {
-    Name = "confluent-101-workshop-webapp-nacl-august-2025"
+    Name = "confluent-101-workshop-webapp-nacl-august-2025-${random_id.suffix.dec}"
   }
 }
 
@@ -71,7 +71,7 @@ resource "aws_network_acl_association" "nacl-db-subnet-2-association" {
 }
 
 resource "aws_security_group" "webapp-sg" {
-  name        = "webapp-sg"
+  name        = "webapp-sg-${random_id.suffix.dec}"
   description = "SG for the workshop webapp"
   vpc_id      = aws_vpc.workshop-vpc.id
 
@@ -92,12 +92,12 @@ resource "aws_security_group" "webapp-sg" {
   }
 
   tags = {
-    Name = "webapp-sg"
+    Name = "webapp-sg-${random_id.suffix.dec}"
   }
 }
 
 resource "aws_security_group" "database-sg" {
-  name        = "database-sg"
+  name        = "database-sg-${random_id.suffix.dec}"
   description = "SG for the workshop databases"
   vpc_id      = aws_vpc.workshop-vpc.id
 
@@ -118,6 +118,6 @@ resource "aws_security_group" "database-sg" {
   }
 
   tags = {
-    Name = "database-sg"
+    Name = "database-sg-${random_id.suffix.dec}"
   }
 }

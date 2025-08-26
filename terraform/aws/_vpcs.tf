@@ -4,7 +4,7 @@ resource "aws_vpc" "workshop-vpc" {
     enable_dns_support   = true
     enable_dns_hostnames = true
     tags = {
-        Name = "confluent-101-workshop-vpc-august-2025"
+        Name = "confluent-101-workshop-vpc-august-2025-${random_id.suffix.dec}"
     }
 }
 
@@ -15,7 +15,7 @@ resource "aws_subnet" "workshop-subnet" {
     map_public_ip_on_launch = true
 
     tags = {
-        Name = "workshop-subnet"
+        Name = "workshop-subnet-${random_id.suffix.dec}"
     }
 
 
@@ -28,7 +28,7 @@ resource "aws_subnet" "db-subnet-1" {
     availability_zone = "eu-west-1a"
 
     tags = {
-        Name = "db-subnet-1"
+        Name = "db-subnet-1-${random_id.suffix.dec}"
     }
 
 
@@ -41,7 +41,7 @@ resource "aws_subnet" "db-subnet-2" {
     availability_zone = "eu-west-1b"
 
     tags = {
-        Name = "db-subnet-2"
+        Name = "db-subnet-2-${random_id.suffix.dec}"
     }
 
 
@@ -62,7 +62,7 @@ resource "aws_route_table" "workshop-route-table" {
     }
 
     tags = {
-        Name = "workshop-route-table"
+        Name = "workshop-route-table-${random_id.suffix.dec}"
     }
 }
 
@@ -91,14 +91,14 @@ resource "aws_db_subnet_group" "workshop-db-subnet-group" {
     ]
 
     tags = {
-        Name = "workshop-db-subnet-group"
+        Name = "workshop-db-subnet-group-${random_id.suffix.dec}"
     }
 }
 
 resource "aws_internet_gateway" "igw" {
 
   tags = {
-    Name = "workshop-internet-gateway"
+    Name = "workshop-internet-gateway-${random_id.suffix.dec}"
   }
 
   depends_on = [aws_vpc.workshop-vpc]

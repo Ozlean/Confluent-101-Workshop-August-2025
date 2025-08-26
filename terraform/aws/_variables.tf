@@ -4,6 +4,10 @@ terraform {
     }
 }
 
+resource "random_id" "suffix" {
+    byte_length = 2
+}
+
 variable "AWS_workshop_terraform_user_key" {
     description = "The access key for the AWS workshop_terraform_user user"
     type = string

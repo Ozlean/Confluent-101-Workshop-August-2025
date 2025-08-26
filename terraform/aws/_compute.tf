@@ -12,7 +12,7 @@ resource "aws_instance" "webapp-instance" {
 
 
     tags = {
-        Name = "webapp-instance"
+      Name = "webapp-instance-${random_id.suffix.dec}"
     }
 
     vpc_security_group_ids = [aws_security_group.webapp-sg.id]
@@ -30,7 +30,7 @@ resource "aws_db_instance" "RDS1-src" {
   password             = local.DB_PASSWORD
   multi_az = false
 
-  identifier = "rds1-src"
+  identifier = "rds1-src-${random_id.suffix.dec}"
 
   db_subnet_group_name = aws_db_subnet_group.workshop-db-subnet-group.name
   vpc_security_group_ids = [aws_security_group.database-sg.id]
@@ -66,7 +66,7 @@ resource "aws_db_instance" "RDS2-dst" {
 
 
 resource "aws_db_parameter_group" "rds_logical_pg" {
-  name        = "rds-logical-pg"
+  name        = "rds-logical-pg-${random_id.suffix.dec}"
   family      = "postgres15"
   description = "Parameter group for logical replication"
 
