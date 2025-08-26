@@ -3,7 +3,7 @@ resource "aws_instance" "webapp-instance" {
     ami = var.WEBAPP_AMI
     instance_type = "t2.micro"
     subnet_id = aws_subnet.workshop-subnet.id
-    key_name = aws_key_pair.ec2-keypair.key_name    
+    # key_name = aws_key_pair.ec2-keypair.key_name    
 
     user_data = templatefile("${path.module}/templates/webapp.tpl", {
         RDS1_VARS = local.RDS1_VARS
