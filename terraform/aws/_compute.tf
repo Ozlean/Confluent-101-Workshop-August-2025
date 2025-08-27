@@ -78,13 +78,13 @@ resource "aws_db_parameter_group" "rds_logical_pg" {
 
   parameter {
     name         = "max_wal_senders"
-    value        = "5"
+    value        = "20"
     apply_method = "pending-reboot"
   }
 
   parameter {
     name         = "max_replication_slots"
-    value        = "5"
+    value        = "20"
     apply_method = "pending-reboot"
   }
 }
