@@ -83,7 +83,7 @@ resource "aws_route_table_association" "db-2-route-table-association" {
 
 
 resource "aws_db_subnet_group" "workshop-db-subnet-group" {
-    name = "workshop-db-subnet-group"
+    name = "workshop-db-subnet-group-${random_id.suffix.dec}"
     description = "subnet group for rds instances in workshop"
     subnet_ids = [
         aws_subnet.db-subnet-1.id,

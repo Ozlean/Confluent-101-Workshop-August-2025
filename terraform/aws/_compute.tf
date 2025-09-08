@@ -53,7 +53,7 @@ resource "aws_db_instance" "RDS2-dst" {
   password             = local.DB_PASSWORD
   multi_az = false
 
-  identifier = "rds2-dst"
+  identifier = "rds2-dst-${random_id.suffix.dec}"
 
   db_subnet_group_name = aws_db_subnet_group.workshop-db-subnet-group.name
   vpc_security_group_ids = [aws_security_group.database-sg.id]

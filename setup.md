@@ -20,7 +20,7 @@ WEBAPP_AMI = <AMI>
 ## Creating the workshop
 
 In /terraform/aws run the following commands to create the AWS infrastructure:
-terraform init
+terraform init 
 
 terraform apply -var-file=<Path-to-keys.tfvars>
 

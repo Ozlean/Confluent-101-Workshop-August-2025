@@ -21,7 +21,7 @@ variable "AWS_workshop_terraform_user_secret" {
 variable "WEBAPP_AMI" {
     description = "AMI for the webapp"
     type = string
-    default = "ami-071299e36e4bb550c"
+    default = "ami-080dd15733617fecd"
 }
 
 locals  {
@@ -77,7 +77,7 @@ output "RDS2_VARS" {
 output "WEBAPP_VARS" {
     value = {
         WEBAPP_HOST = local.WEBAPP_VARS.WEBAPP_HOST
-        WEBAPP_PORT = local.WEBAPP_VARS.WEBAPP_HOST
+        WEBAPP_PORT = local.WEBAPP_VARS.WEBAPP_PORT
         WEBAPP_URL = "${local.WEBAPP_VARS.WEBAPP_HOST}:${local.WEBAPP_VARS.WEBAPP_PORT}"
     }
 
