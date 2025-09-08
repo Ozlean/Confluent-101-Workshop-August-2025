@@ -84,7 +84,7 @@ output "WEBAPP_VARS" {
 }
 
 resource "local_file" "workshop_instruction_file" {
-    filename = "${path.module}/../../workshop_instruction_file.md"
+    filename = "${path.module}/../../README.md"
 
     content = templatefile("${path.module}/templates/workshop_instruction_file.tpl", {
         WEBAPP_URL = "${local.WEBAPP_VARS.WEBAPP_HOST}:${local.WEBAPP_VARS.WEBAPP_PORT}"
