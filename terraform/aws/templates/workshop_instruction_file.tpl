@@ -196,7 +196,7 @@ Here, we will be creating a database schema to use it in the sink connector we w
     2. Database port: ${RDS2_PORT}
     3. Database username: ${RDS2_USER}
     4. Database password: ${RDS2_PASSWORD}
-    5. Database name: -Your schema name-
+    5. Database name: postgres
 5. Under configuration, set Input Kafka record value format as **JSON_SR** and Insert mode as **UPSERT**.
 6. In advanced configuration, modify the following:<br>
 	1. Auto create table: true<br>
