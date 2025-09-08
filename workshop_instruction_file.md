@@ -196,7 +196,7 @@ Here, we will be creating a database schema to use it in the sink connector we w
     2. Database port: 5432
     3. Database username: postgres
     4. Database password: password
-    5. Database name: -Your schema name-
+    5. Database name: postgres
 5. Under configuration, set Input Kafka record value format as **JSON_SR** and Insert mode as **UPSERT**.
 6. In advanced configuration, modify the following:<br>
 	1. Auto create table: true<br>
