@@ -133,10 +133,10 @@ Now that you have completed setting up your Confluent Cloud account, cluster and
   </div>
   
 2. This will redirect you to connector configuration page, select **Use an existing API Key** and provide API key credentials you created earlier.
-3. Next, go to the following website - 54.78.228.228:3000 and click **Create a Database** at the source database and give ```<name>_<random6char>``` Make note of this name.<br>
+3. Next, go to the following website - 34.245.6.49:3000 and click **Create a Database** at the source database and give ```<name>_<random6char>``` Make note of this name.<br>
 4. Click on **Refresh Records** button few times to see that there are no records in the new database created.
 4. Come back to connectors page and click next. Enter the database details as provided in the workshop.
-    1. Database hostname: rds1-src-60974.cfbfhdyr6yyd.eu-west-1.rds.amazonaws.com
+    1. Database hostname: rds1-src-50676.cfbfhdyr6yyd.eu-west-1.rds.amazonaws.com
     2. Database port: 5432
     3. Database username: postgres
     4. Database password: password
@@ -170,7 +170,7 @@ View the connector, its status, and metrics on the **Connectors** page.
 
 ## <a name="step-5"></a>**Insert Records to the Database**
 Here, we will be inserting new records to the database
-1. Go to the website: 54.78.228.228:3000
+1. Go to the website: 34.245.6.49:3000
 2. Click on **Insert Product Records** button.
 3. Click on **Submit Records** button to insert these records to the database.
 4. Click on **Refresh Records** button to view the new records inserted.
@@ -179,7 +179,7 @@ Here, we will be inserting new records to the database
 
 ## <a name="step-6"></a>**Create Schema for database**
 Here, we will be creating a database schema to use it in the sink connector we will configure later.
-1. Click on the link - 54.78.228.228:3000
+1. Click on the link - 34.245.6.49:3000
 2. Click on Create Schema. Use the database name created earlier as the schema name and click create.
 3. Click on *Refresh Records** multiple times to see the data in the target database schema.
 
@@ -192,7 +192,7 @@ Here, we will be creating a database schema to use it in the sink connector we w
 2. This will redirect you to select the topic from which you need data. Select **db_public_products**.
 3. Next, select **Use an existing API Key** and you can provide API key credentials you created earlier and click continue.
 4. Next, in the database connection details, enter database details as provided in the workshop.
-    1. Database hostname: rds2-dst-60974.cfbfhdyr6yyd.eu-west-1.rds.amazonaws.com
+    1. Database hostname: rds2-dst-50676.cfbfhdyr6yyd.eu-west-1.rds.amazonaws.com
     2. Database port: 5432
     3. Database username: postgres
     4. Database password: password
@@ -217,7 +217,7 @@ Here, we will be creating a database schema to use it in the sink connector we w
    	 
  ## <a name="step-8"></a>**Observe Real-time data streaming to destination database**
   Now that the connectors are configured, 
-  1. Go to the site - 54.78.228.228:3000 and click **Refresh Records**. This will reflect all the previously added records in the source database reflecting on the target database as well.
+  1. Go to the site - 34.245.6.49:3000 and click **Refresh Records**. This will reflect all the previously added records in the source database reflecting on the target database as well.
   2. Click on **Edit** button the source database record and modify any of the values and click on **Save Changes**.
   3. Click on **Refresh Records** to see the change happen in target database as well.
 
