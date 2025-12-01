@@ -24,7 +24,7 @@ resource "aws_db_instance" "RDS1-src" {
   allocated_storage    = 10
   db_name              = local.DB_DEFAULT_NAME
   engine               = "postgres"
-  engine_version       = "15.8"
+  engine_version       = "15.15"
   instance_class       = "db.t4g.micro"
   username             = local.DB_USER
   password             = local.DB_PASSWORD
@@ -47,7 +47,7 @@ resource "aws_db_instance" "RDS2-dst" {
   allocated_storage    = 10
   db_name              = local.DB_DEFAULT_NAME
   engine               = "postgres"
-  engine_version       = "15.8"
+  engine_version       = "15.15"
   instance_class       = "db.t4g.micro"
   username             = local.DB_USER
   password             = local.DB_PASSWORD
@@ -78,13 +78,13 @@ resource "aws_db_parameter_group" "rds_logical_pg" {
 
   parameter {
     name         = "max_wal_senders"
-    value        = "20"
+    value        = "40"
     apply_method = "pending-reboot"
   }
 
   parameter {
     name         = "max_replication_slots"
-    value        = "20"
+    value        = "40"
     apply_method = "pending-reboot"
   }
 }
